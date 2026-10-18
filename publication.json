@@ -10,8 +10,8 @@
   "publisher": "thedevjin",
   "documentationLicense": "CC-BY-4.0",
   "codeLicense": "MIT",
-  "status": "LOCAL_PREPARATION",
+  "status": "PUBLICATION_CANDIDATE",
   "charterVersion": "0.1-draft",
   "publicationMode": "manual-exact-commit",
-  "note": "Jin selected thedevjin as personal owner and publisher, CC BY 4.0 for original A.O.I. prose and MIT for website code. This remains local preparation; source upload, site publication and domain/DNS actions require fresh exact approval."
+  "note": "Prepared for public website review under thedevjin. Original A.O.I. prose uses CC BY 4.0 and website code uses MIT. Charter 0.1 remains a draft. Publication and domain/DNS actions require exact final approval."
 }

@@ -140,7 +140,7 @@ function renderPage(lang, page, source, config) {
   return '<!doctype html>\n<html lang="' + languageTag(lang) + '">\n<head>\n<meta charset="utf-8">\n' +
     '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
     '<meta name="color-scheme" content="light">\n' +
-    '<meta name="robots" content="noindex,nofollow">\n' +
+    '<meta name="robots" content="' + (config.status === 'PUBLICATION_CANDIDATE' ? 'index,follow' : 'noindex,nofollow') + '">\n' +
     '<title>' + escapeHtml(isHome ? parsed.title : parsed.title + ' · Anchor of Intellect') + '</title>\n' +
     '<meta name="description" content="' + escapeHtml(description) + '">\n' +
     '<link rel="canonical" href="' + escapeHtml(canonical) + '">\n' + alternates + '\n' +

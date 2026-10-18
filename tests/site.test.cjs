@@ -157,8 +157,16 @@ test('the manuscript is explicitly a draft; company and defense texts remain sep
   }
 });
 
-test('the initial local preparation is marked noindex in every HTML page', () => {
-  for (const file of htmlFiles) assert.match(readHtml(file), /name="robots" content="noindex,nofollow"/);
+test('only an explicit publication candidate permits indexing in every HTML page', () => {
+  const expected = config.status === 'PUBLICATION_CANDIDATE' ? 'index,follow' : 'noindex,nofollow';
+  for (const file of htmlFiles) assert.ok(readHtml(file).includes('name="robots" content="' + expected + '"'));
+  for (const lang of LANGUAGES) for (const page of PAGES) {
+    const source = fs.readFileSync(path.join(ROOT, 'content', lang, page + '.md'), 'utf8');
+    for (const status of ['LOCAL_PREPARATION', 'UNKNOWN', undefined]) {
+      assert.match(renderPage(lang, page, source, {...config, status}), /name="robots" content="noindex,nofollow"/);
+    }
+    assert.match(renderPage(lang, page, source, {...config, status: 'PUBLICATION_CANDIDATE'}), /name="robots" content="index,follow"/);
+  }
 });
 
 test('every file hash and byte length matches the manifest, and builds are reproducible', () => {
@@ -185,8 +193,8 @@ const context = {
   expectedBundle: built.bundleSha256
 };
 
-test('the chosen personal owner and licenses do not remove final-publication HOLD', () => {
-  const errors = validatePublication(config, context, built.bundleSha256);
+test('the chosen personal owner and licenses alone cannot authorize local preparation for publication', () => {
+  const errors = validatePublication({...config, status: 'LOCAL_PREPARATION'}, context, built.bundleSha256);
   assert.equal(config.repository.owner, 'thedevjin');
   assert.equal(config.publisher, 'thedevjin');
   assert.equal(config.documentationLicense, 'CC-BY-4.0');
