@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "project": "anchor-of-intellect",
+  "siteOrigin": "https://anchorofintellect.com",
+  "repository": {
+    "owner": "thedevjin",
+    "name": "anchor-of-intellect",
+    "defaultBranch": "main"
+  },
+  "publisher": "thedevjin",
+  "documentationLicense": "CC-BY-4.0",
+  "codeLicense": "MIT",
+  "status": "LOCAL_PREPARATION",
+  "charterVersion": "0.1-draft",
+  "publicationMode": "manual-exact-commit",
+  "note": "Jin selected thedevjin as personal owner and publisher, CC BY 4.0 for original A.O.I. prose and MIT for website code. This remains local preparation; source upload, site publication and domain/DNS actions require fresh exact approval."
+}

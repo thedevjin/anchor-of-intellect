@@ -1,0 +1,10 @@
+# Generated site and local-only working material
+/dist/
+/node_modules/
+/.preview/
+/.private/
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db

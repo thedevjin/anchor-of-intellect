@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <title>Anchor of Intellect</title>
+  <rect width="256" height="256" rx="48" fill="#142f2a"/>
+  <g transform="translate(24 24) scale(0.8125)" fill="#f7f5ef">
+    <path d="M44 72 116 140V208L44 140Z"/>
+    <path d="m140 140 72-68v68l-72 68Z"/>
+    <path d="m128 32 25 25-25 25-25-25Z"/>
+  </g>
+</svg>
